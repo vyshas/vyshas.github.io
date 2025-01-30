@@ -3,18 +3,18 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Dark theme colors */
-        :root {
-            --bg-primary: #1a1a1a;
-            --bg-secondary: #2d2d2d;
-            --bg-tertiary: #353535;
-            --text-primary: #e1e1e1;
-            --text-secondary: #b0b0b0;
-            --accent-primary: #64b5f6;
-            --accent-secondary: #4a90e2;
-            --border-color: #404040;
-            --hover-color: #454545;
-        }
+       /* Dark theme colors - removing light theme variations */
+:root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --bg-tertiary: #353535;
+    --text-primary: #e1e1e1;
+    --text-secondary: #c4c4c4;  /* Brightened for better contrast */
+    --accent-primary: #64b5f6;
+    --accent-secondary: #4a90e2;
+    --border-color: #404040;
+    --hover-color: #454545;
+}
 
         /* Base styles */
         body {
@@ -227,6 +227,11 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Remove any potential system preference overrides */
+@media (prefers-color-scheme: light) {
+    /* Intentionally empty to prevent light theme override */
+}
 
         @media (max-width: 480px) {
             .name {
