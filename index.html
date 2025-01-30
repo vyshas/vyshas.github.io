@@ -1,45 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Dark theme colors */
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #353535;
+            --text-primary: #e1e1e1;
+            --text-secondary: #b0b0b0;
+            --accent-primary: #64b5f6;
+            --accent-secondary: #4a90e2;
+            --border-color: #404040;
+            --hover-color: #454545;
+        }
+
+        /* Base styles */
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px;
-            color: #333;
+            padding: 20px;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
         }
 
+        /* Header styles */
         .header {
             text-align: center;
             margin-bottom: 40px;
-            border-bottom: 2px solid #2c3e50;
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 20px;
         }
 
         .name {
             font-size: 48px;
-            color: #2c3e50;
+            color: var(--accent-primary);
             margin-bottom: 10px;
+        }
+
+        .summary {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            padding: 0 15px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 20px;
             flex-wrap: wrap;
-            margin-top: 20px;
+            gap: 15px;
+            padding: 0 15px;
         }
 
+        .contact-info span {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 10px;
+            background-color: var(--bg-secondary);
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* Section styles */
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .section-title {
             font-size: 24px;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--accent-secondary);
             padding-bottom: 5px;
             margin-bottom: 20px;
         }
@@ -47,18 +83,23 @@
         .film-entry {
             margin-bottom: 25px;
             padding: 15px;
-            background-color: #f8f9fa;
+            background-color: var(--bg-secondary);
             border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .film-entry:hover {
+            background-color: var(--hover-color);
         }
 
         .film-title {
             font-size: 20px;
-            color: #2c3e50;
+            color: var(--accent-primary);
             margin-bottom: 5px;
         }
 
         .film-meta {
-            color: #666;
+            color: var(--text-secondary);
             font-style: italic;
             margin-bottom: 10px;
         }
@@ -66,11 +107,13 @@
         .film-link {
             display: inline-block;
             margin-top: 10px;
-            color: #3498db;
+            color: var(--accent-primary);
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         .film-link:hover {
+            color: var(--accent-secondary);
             text-decoration: underline;
         }
 
@@ -82,54 +125,130 @@
         }
 
         .skill-item {
-            background-color: #e8f4f8;
+            background-color: var(--bg-secondary);
             padding: 10px;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background-color: var(--hover-color);
         }
 
         .achievements {
-            background-color: #f0f7fa;
+            background-color: var(--bg-secondary);
             padding: 20px;
             border-radius: 5px;
             margin-top: 20px;
         }
 
         .languages {
-            background-color: #e8f4f8;
+            background-color: var(--bg-secondary);
             padding: 20px;
             border-radius: 5px;
             margin-top: 20px;
         }
 
-        .work-experience {
+        .work-experience, .education-entry {
             margin-bottom: 20px;
             padding: 15px;
-            background-color: #f8f9fa;
+            background-color: var(--bg-secondary);
             border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .work-experience:hover, .education-entry:hover {
+            background-color: var(--hover-color);
         }
 
         .job-title {
             font-weight: bold;
-            color: #2c3e50;
-        }
-
-        .education-entry {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-radius: 5px;
+            color: var(--accent-primary);
+            margin-bottom: 5px;
         }
 
         .date {
-            color: #666;
+            color: var(--text-secondary);
             margin-bottom: 5px;
+        }
+
+        /* List styles */
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+            color: var(--text-primary);
+        }
+
+        /* Additional styles for education */
+        .education-entry p {
+            margin-top: 10px;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .name {
+                font-size: 36px;
+            }
+
+            .summary {
+                font-size: 15px;
+                padding: 0 10px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .contact-info span {
+                width: calc(100% - 20px);
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .film-title {
+                font-size: 18px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name {
+                font-size: 28px;
+            }
+
+            .film-entry, .work-experience, .education-entry {
+                padding: 10px;
+            }
+
+            .film-meta {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="name">Vysh</div>
-        <p>Filmmaker with experience in various films, blending college projects and professional productions. Backed by 14 years of tech industry leadership, specializing in team management and communication. Diploma graduate in filmmaking and skilled in storytelling.</p>
+        <div class="summary">
+            Filmmaker with experience in various short films, blending college projects and professional productions. Backed by 14 years of tech industry leadership, specializing in team management and communication. Diploma graduate in filmmaking and skilled in storytelling.
+        </div>
         <div class="contact-info">
             <span>📱 +919380395676</span>
             <span>📱 +447438753409</span>
@@ -261,7 +380,7 @@
             <div class="date">Jan 2019 - Dec 2019</div>
         </div>
 
-        <div class="work-experience">
+       <div class="work-experience">
             <div class="job-title">Engineering Manager | Conduent Parking Enforcement Ltd.(Formerly Xerox Parking Ltd), Portsmouth, U.K</div>
             <div class="date">Nov 2016 - Dec 2018</div>
         </div>
@@ -286,22 +405,19 @@
         <h2 class="section-title">EDUCATION</h2>
         
         <div class="education-entry">
-            <div class="job-title">Diploma in Filmmaking</div>
-            <div>Westford Institute of Film Technology - India</div>
+            <div class="job-title">Diploma in Filmmaking | Westford Institute of Film Technology - India</div>
             <div class="date">Sept 2023 - Jan 2025</div>
-            <p>Intensive 2 year course on foundations of Filmmaking covering Direction Cinematography, Scripting, Editing, DI, Art direction and Sound design. Practical oriented course with over 20 short films shot during the entire course.</p>
+            <p>Intensive 2 year course on foundations of Filmmaking covering Direction, Cinematography, Scripting, Editing, DI, Art direction and Sound design. Practical oriented course with over 20 short films shot during the entire course.</p>
         </div>
 
         <div class="education-entry">
-            <div class="job-title">MSc in Information Engineering</div>
-            <div>Robert Gordon University - United Kingdom</div>
+            <div class="job-title">MSc in Information Engineering | Robert Gordon University - United Kingdom</div>
             <div class="date">Jan 2012 - May 2013</div>
             <p>Object Oriented Programming in Java, E-Commerce, Adaptive Intelligent Systems, Intelligent Web Technologies, Distributed Systems, Oracle 11g, DataMining & J2EE.</p>
         </div>
 
         <div class="education-entry">
-            <div class="job-title">B.Eng in Computer Science</div>
-            <div>Visveswariah Technological University - India</div>
+            <div class="job-title">B.Eng in Computer Science | Visveswariah Technological University - India</div>
             <div class="date">Jan 2012 - May 2013</div>
             <p>Data Structures, LAMP, Database Management System, Computer Networks, Analysis and Design of Algorithms.</p>
         </div>
