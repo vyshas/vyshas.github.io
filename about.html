@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Vysh - Filmmaker</title>
+    <style>
+        /* Same root variables and base styles as main page */
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #e1e1e1;
+            --text-secondary: #c4c4c4;
+            --accent-primary: #64b5f6;
+            --accent-secondary: #4a90e2;
+            --border-color: #404040;
+            --hover-color: #454545;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back-link:hover {
+            color: var(--accent-secondary);
+            text-decoration: underline;
+        }
+
+        .about-container {
+            background-color: var(--bg-secondary);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .about-title {
+            color: var(--accent-primary);
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .about-section {
+            margin-bottom: 30px;
+        }
+
+        .about-section p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: block;
+            background-color: var(--bg-tertiary);
+            border: 3px solid var(--accent-primary);
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+    <div class="about-container">
+        <h1 class="about-title">About Me</h1>
+        
+        <!-- Add a profile image if you have one -->
+        <img src="/api/placeholder/200/200" alt="Vysh" class="profile-image">
+
+        <div class="about-section">
+            <p>I am a passionate filmmaker with a unique blend of creative storytelling and technical expertise. After spending over a decade in the tech industry leading engineering teams, I decided to pursue my true passion for filmmaking. This diverse background has given me a distinctive edge in both creative and operational aspects of film production.</p>
+            
+            <p>My journey in filmmaking began at Westford Institute of Film Technology, where I honed my skills in direction, scriptwriting, and production. My technical background has proven invaluable in managing complex film projects, understanding modern filmmaking technology, and leading diverse creative teams.</p>
+            
+            <p>I specialize in creating emotionally resonant stories that blend elements of drama and thriller genres. My recent film "Shahaba" won multiple awards, including Best Film and Best Script, validating my approach to storytelling. I believe in the power of visual storytelling to create meaningful connections and spark important conversations.</p>
+            
+            <p>When I'm not behind the camera, I'm constantly exploring new narrative techniques, studying different filmmaking styles, and collaborating with other creative professionals. I'm fluent in multiple languages, which helps me connect with diverse audiences and tell universal stories that transcend cultural boundaries.</p>
+        </div>
+    </div>
+</body>
+</html>
