@@ -62,19 +62,34 @@
             line-height: 1.8;
         }
 
+        /* Updated profile image styles */
+          .profile-section {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
         .profile-image {
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            margin: 0 auto 30px;
-            display: block;
-            background-color: var(--bg-tertiary);
+            object-fit: cover; /* This ensures the image covers the space without distortion */
             border: 3px solid var(--accent-primary);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
         }
 
         @media (max-width: 768px) {
             .about-container {
                 padding: 20px;
+            }
+            .profile-image {
+                width: 150px;
+                height: 150px;
             }
         }
     </style>
@@ -85,8 +100,9 @@
     <div class="about-container">
         <h1 class="about-title">About Me</h1>
         
-        <!-- Add a profile image if you have one -->
-        <img src="/api/placeholder/200/200" alt="Vysh" class="profile-image">
+        <div class="profile-section">
+            <img src="images/profile.jpeg" alt="Vysh - Filmmaker" class="profile-image">
+        </div>
 
         <div class="about-section">
             <p>I am a passionate filmmaker with a unique blend of creative storytelling and technical expertise. After spending over a decade in the tech industry leading engineering teams, I decided to pursue my true passion for filmmaking. This diverse background has given me a distinctive edge in both creative and operational aspects of film production.</p>
