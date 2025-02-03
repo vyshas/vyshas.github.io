@@ -246,6 +246,23 @@
                 font-size: 14px;
             }
         }
+        
+        /* Add new style for About Me link */
+        .about-link {
+            display: inline-block;
+            margin: 20px 0 40px;
+            padding: 12px 24px;
+            background-color: var(--accent-primary);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .about-link:hover {
+            background-color: var(--accent-secondary);
+        }
     </style>
 </head>
 <body>
@@ -261,6 +278,11 @@
     <span><a href="https://www.instagram.com/vyshakhamarnath/" target="_blank" style="color: var(--accent-primary); text-decoration: none;">Instagram</a></span>
         </div>
     </div>
+    
+     <!-- About Me Link -->
+    <center>
+        <a href="about.html" class="about-link">Behind the Lens →</a>
+    </center>
 
     <div class="section">
         <h2 class="section-title">FILMMAKING EXPERIENCE</h2>
